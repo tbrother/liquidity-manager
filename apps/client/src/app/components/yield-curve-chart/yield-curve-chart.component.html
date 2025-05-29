@@ -1,0 +1,9 @@
+<div class="yield-curve-container">
+  <h2>Current Treasury Yield Curve</h2>
+  <div class="chart-wrapper">
+    <canvas #chartCanvas></canvas>
+  </div>
+  <div class="chart-info" *ngIf="lastUpdated">
+    <p>Last updated: {{ lastUpdated | date:'medium' }}</p>
+  </div>
+</div>

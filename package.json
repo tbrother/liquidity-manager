@@ -1,0 +1,24 @@
+{
+  "name": "liquidity-manager",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "scripts": {
+    "dev:client": "npm run start --workspace=client",
+    "dev:server": "npm run dev --workspace=server",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build:server": "npm run build --workspace=server",
+    "build:client": "npm run build --workspace=client",
+    "build": "npm run build:server && npm run build:client",
+    "install:all": "npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "overrides": {
+    "semver": "~7.5.2"
+  }
+}

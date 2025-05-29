@@ -1,0 +1,61 @@
+<div class="order-form-container">
+  <div class="form-header">
+    <button class="back-btn" (click)="goBack()">
+      <span class="back-arrow">←</span> Back to Home
+    </button>
+    <h2>Submit Treasury Order</h2>
+  </div>
+
+  <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="term">Term (months):</label>
+      <select id="term" formControlName="term" class="form-control">
+        <option value="">Select term</option>
+        <option value="1">1 Month</option>
+        <option value="3">3 Months</option>
+        <option value="12">1 Year</option>
+        <option value="24">2 Years</option>
+        <option value="60">5 Years</option>
+        <option value="120">10 Years</option>
+        <option value="360">30 Years</option>
+      </select>
+      <div class="error" *ngIf="orderForm.get('term')?.invalid && orderForm.get('term')?.touched">
+        Please select a term
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="amount">Amount ($):</label>
+      <input 
+        type="number" 
+        id="amount" 
+        formControlName="amount" 
+        class="form-control"
+        placeholder="Enter amount"
+        min="100"
+        step="100"
+      >
+      <div class="error" *ngIf="orderForm.get('amount')?.invalid && orderForm.get('amount')?.touched">
+        <span *ngIf="orderForm.get('amount')?.errors?.['required']">Amount is required</span>
+        <span *ngIf="orderForm.get('amount')?.errors?.['min']">Minimum amount is $100</span>
+      </div>
+    </div>
+
+    <button 
+      type="submit" 
+      class="submit-btn"
+      [disabled]="orderForm.invalid || isSubmitting"
+    >
+      <span *ngIf="isSubmitting">Submitting...</span>
+      <span *ngIf="!isSubmitting">Submit Order</span>
+    </button>
+  </form>
+
+  <div class="success-message" *ngIf="successMessage">
+    {{ successMessage }}
+  </div>
+
+  <div class="error-message" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+</div>
