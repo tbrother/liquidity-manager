@@ -1,4 +1,10 @@
-import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  OnDestroy,
+} from '@angular/core';
 import { TreasuryData, YieldCurvePoint } from '@shared/types';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
@@ -71,7 +77,9 @@ export class YieldCurveChartComponent implements OnInit, OnDestroy {
       }
     });
 
-    const yieldValues = treasuryData.yields.map((point: YieldCurvePoint) => point.yield);
+    const yieldValues = treasuryData.yields.map(
+      (point: YieldCurvePoint) => point.yield,
+    );
 
     const config: ChartConfiguration = {
       type: 'line',

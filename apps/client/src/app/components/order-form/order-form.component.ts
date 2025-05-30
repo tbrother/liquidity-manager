@@ -27,9 +27,9 @@ export class OrderFormComponent implements OnDestroy {
   private subscription: Subscription | null = null;
 
   constructor(
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private orderService: OrderService,
-    private router: Router
+    private router: Router,
   ) {
     this.orderForm = this.fb.group({
       term: ['', Validators.required],
@@ -53,21 +53,23 @@ export class OrderFormComponent implements OnDestroy {
         this.subscription.unsubscribe();
       }
 
-      this.subscription = this.orderService.createOrder(orderRequest).subscribe({
-        next: (order) => {
-          this.isSubmitting = false;
-          this.successMessage = `Order submitted successfully! Order ID: ${order.id}`;
-          this.orderForm.reset();
-          this.orderSubmitted.emit();
-          // Navigate back to home after successful submission
-          setTimeout(() => this.router.navigate(['/']), 1500);
-        },
-        error: (error) => {
-          this.isSubmitting = false;
-          this.errorMessage = 'Failed to submit order. Please try again.';
-          console.error('Error submitting order:', error);
-        },
-      });
+      this.subscription = this.orderService
+        .createOrder(orderRequest)
+        .subscribe({
+          next: (order) => {
+            this.isSubmitting = false;
+            this.successMessage = `Order submitted successfully! Order ID: ${order.id}`;
+            this.orderForm.reset();
+            this.orderSubmitted.emit();
+            // Navigate back to home after successful submission
+            setTimeout(() => this.router.navigate(['/']), 1500);
+          },
+          error: (error) => {
+            this.isSubmitting = false;
+            this.errorMessage = 'Failed to submit order. Please try again.';
+            console.error('Error submitting order:', error);
+          },
+        });
     }
   }
 

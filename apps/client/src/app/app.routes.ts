@@ -3,14 +3,14 @@ import { OrderFormComponent } from './components/order-form/order-form.component
 import { HomeComponent } from './components/home/home.component';
 
 export const routes: Routes = [
-  { 
+  {
     path: '',
     component: HomeComponent,
-    title: 'Home'
+    title: 'Home',
   },
-  { 
-    path: 'order', 
+  {
+    path: 'order',
     component: OrderFormComponent,
-    title: 'Create Order'
-  }
+    title: 'Create Order',
+  },
 ];

@@ -7,7 +7,12 @@ import { YieldCurveChartComponent } from '../yield-curve-chart/yield-curve-chart
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, OrderHistoryComponent, YieldCurveChartComponent],
+  imports: [
+    CommonModule,
+    RouterLink,
+    OrderHistoryComponent,
+    YieldCurveChartComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
@@ -19,4 +24,4 @@ export class HomeComponent {
       this.orderHistory.loadOrders();
     }
   }
-} 
+}

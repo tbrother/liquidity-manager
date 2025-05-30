@@ -31,8 +31,5 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "include": [
-    "src/**/*.ts",
-    "../../libs/shared/**/*.ts"
-  ]
+  "include": ["src/**/*.ts", "../../libs/shared/**/*.ts"]
 }

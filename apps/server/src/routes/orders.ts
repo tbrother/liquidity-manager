@@ -21,7 +21,9 @@ router.post("/", async (req, res) => {
 
     // Basic validation
     if (!term || !amount || term <= 0 || amount <= 0) {
-      return res.status(400).json({ error: "Valid term and amount are required" });
+      return res
+        .status(400)
+        .json({ error: "Valid term and amount are required" });
     }
 
     const order = await Order.create({ term, amount });

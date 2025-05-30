@@ -8,9 +8,8 @@ describe('YieldCurveChartComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [YieldCurveChartComponent]
-    })
-    .compileComponents();
+      imports: [YieldCurveChartComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(YieldCurveChartComponent);
     component = fixture.componentInstance;

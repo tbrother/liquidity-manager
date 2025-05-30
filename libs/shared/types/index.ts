@@ -3,7 +3,7 @@ export interface Order {
   term: number;
   amount: number;
   timestamp: Date;
-  status: 'pending' | 'filled' | 'cancelled';
+  status: "pending" | "filled" | "cancelled";
 }
 
 export interface YieldCurvePoint {

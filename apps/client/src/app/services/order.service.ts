@@ -25,7 +25,7 @@ export class OrderService {
           timestamp: new Date(order.timestamp),
         }));
         return transformed;
-      })
+      }),
     );
   }
 
@@ -37,7 +37,7 @@ export class OrderService {
           timestamp: new Date(order.timestamp),
         };
         return transformed;
-      })
+      }),
     );
   }
 }

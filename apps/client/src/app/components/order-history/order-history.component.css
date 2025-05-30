@@ -2,7 +2,7 @@
   padding: 20px;
   background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -11,7 +11,8 @@ h2 {
   text-align: center;
 }
 
-.loading, .no-orders {
+.loading,
+.no-orders {
   text-align: center;
   padding: 40px;
   color: #666;
@@ -29,7 +30,8 @@ table {
   margin-bottom: 20px;
 }
 
-th, td {
+th,
+td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #e1e5e9;
@@ -113,11 +115,12 @@ tr:hover {
   .orders-table {
     font-size: 0.9em;
   }
-  
-  th, td {
+
+  th,
+  td {
     padding: 8px 4px;
   }
-  
+
   .order-id {
     display: none;
   }

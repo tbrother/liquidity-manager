@@ -19,30 +19,42 @@
         <option value="120">10 Years</option>
         <option value="360">30 Years</option>
       </select>
-      <div class="error" *ngIf="orderForm.get('term')?.invalid && orderForm.get('term')?.touched">
+      <div
+        class="error"
+        *ngIf="orderForm.get('term')?.invalid && orderForm.get('term')?.touched"
+      >
         Please select a term
       </div>
     </div>
 
     <div class="form-group">
       <label for="amount">Amount ($):</label>
-      <input 
-        type="number" 
-        id="amount" 
-        formControlName="amount" 
+      <input
+        type="number"
+        id="amount"
+        formControlName="amount"
         class="form-control"
         placeholder="Enter amount"
         min="100"
         step="100"
+      />
+      <div
+        class="error"
+        *ngIf="
+          orderForm.get('amount')?.invalid && orderForm.get('amount')?.touched
+        "
       >
-      <div class="error" *ngIf="orderForm.get('amount')?.invalid && orderForm.get('amount')?.touched">
-        <span *ngIf="orderForm.get('amount')?.errors?.['required']">Amount is required</span>
-        <span *ngIf="orderForm.get('amount')?.errors?.['min']">Minimum amount is $100</span>
+        <span *ngIf="orderForm.get('amount')?.errors?.['required']"
+          >Amount is required</span
+        >
+        <span *ngIf="orderForm.get('amount')?.errors?.['min']"
+          >Minimum amount is $100</span
+        >
       </div>
     </div>
 
-    <button 
-      type="submit" 
+    <button
+      type="submit"
       class="submit-btn"
       [disabled]="orderForm.invalid || isSubmitting"
     >

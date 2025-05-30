@@ -13,10 +13,12 @@
     "build:server": "npm run build --workspace=server",
     "build:client": "npm run build --workspace=client",
     "build": "npm run build:server && npm run build:client",
-    "install:all": "npm install"
+    "install:all": "npm install",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,html}\""
   },
   "devDependencies": {
-    "concurrently": "^7.6.0"
+    "concurrently": "^7.6.0",
+    "prettier": "^3.2.5"
   },
   "overrides": {
     "semver": "~7.5.2"

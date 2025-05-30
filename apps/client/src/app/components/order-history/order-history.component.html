@@ -23,14 +23,14 @@
           <td class="order-id">{{ order.id.substring(0, 8) }}...</td>
           <td class="term">{{ formatTerm(order.term) }}</td>
           <td class="amount">
-            {{ order.amount | currency : "USD" : "symbol" : "1.0-0" }}
+            {{ order.amount | currency: "USD" : "symbol" : "1.0-0" }}
           </td>
           <td class="status">
             <span class="status-badge" [class]="'status-' + order.status">
               {{ order.status | titlecase }}
             </span>
           </td>
-          <td class="date">{{ order.timestamp | date : "short" }}</td>
+          <td class="date">{{ order.timestamp | date: "short" }}</td>
         </tr>
       </tbody>
     </table>
