@@ -20,7 +20,7 @@ A modern web application built with Angular and Node.js for managing liquidity a
 
 1. Clone and install
 ```bash
-git clone https://github.com/YOUR_USERNAME/liquidity-manager.git
+git clone https://github.com/tbrother/liquidity-manager.git
 cd liquidity-manager
 npm install
 ```
